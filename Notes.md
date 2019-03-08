@@ -1,10 +1,10 @@
 ## **Basic Layout**
-> The <!DOCTYPE> declaration must be the very first thing in your HTML document, before the <html> tag.
+* The <!DOCTYPE> declaration must be the very first thing in your HTML document, before the <html> tag.
 
-> The <!DOCTYPE> declaration is not an HTML tag; it is an instruction to the web browser about what version of HTML the page is written in.
+* The <!DOCTYPE> declaration is not an HTML tag; it is an instruction to the web browser about what version of HTML the page is written in.
 https://www.w3schools.com/tags/tag_doctype.asp
 
-> <head> -> info about the file
+* `<head>` -> info about the file
 
 > Basic structure
 ``` html
@@ -39,17 +39,17 @@ https://www.w3schools.com/tags/tag_doctype.asp
 </head>
 ```
 
-> Typography
->* <h1> -> you want one h1 per page as used by SEO
->* <h1> -> <h6> -> bigger to smaller
+Typography
+* `<h1>` -> you want one h1 per page as used by SEO
+* `<h1>` -> `<h6>` -> bigger to smaller
 
->* <strong> -> to stand out (<b>, <u>, <i> -> old tag has been deprecated with html5)
->* <em> -> italic
->* <br> -> line break
->* <hr> -> horizontal rule (break plus line)
+* `<strong>` -> to stand out (`<b>`, `<u>`, `<i>` -> old tag has been deprecated with html5)
+* `<em>` -> italic
+* `<br>` -> line break
+* `<hr>` -> horizontal rule (break plus line)
 
-> Links
->* <a> tag
+Links
+> `<a>` tag
 ``` html
 <a href="http://www.google.com" target="_blank">Click For Google</a>
 ```
