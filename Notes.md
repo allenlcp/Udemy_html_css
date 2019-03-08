@@ -453,7 +453,7 @@ CSS Units: Relative
 | vh  | To 1% of viewport height |
 
 
-Color Types
+## **Color Types**
 ``` html
 <style>
     h1{
@@ -478,7 +478,7 @@ Color Types
 > https://htmlcolorcodes.com/
 
 
-Background & Borders
+## **Background & Borders**
 > jpeg - cannot be transparent
 > png - can be transparent
 
@@ -523,7 +523,7 @@ Background & Borders
 </style>
 ```
  
-Box Model, Margin & Padding
+## **Box Model, Margin & Padding**
 > margin - outside of the border/element
 > padding - inside of the border/element
 
@@ -600,4 +600,103 @@ Box Model, Margin & Padding
         padding-bottom: 10px;
     }
 </style>
+```
+
+
+## **Float & Alignment**
+Alignment - text align
+``` html
+<style>
+    .box p {
+        /* Text Align */
+        text-align: left;
+        text-align: right;
+        text-align: center;
+        text-align: justify; /* Edges all even*/
+    }
+</style>
+```
+Alignment - container
+``` html
+<style>
+    .container {
+        max-width: 960px; /* fixing the width will show scroll when browser too small use max-width instead*/
+        margin: 30px auto;
+    }
+</style>
+```
+
+Float
+> We will usually use flex-box or css-grid
+* Need to box-sizing - otherwise won't fit
+* Need to clear after float - otherwise next element will go as background to push it down
+``` html
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    ...
+    .clr{
+        clear:both;
+    }
+    ...
+    #box-2 {
+        float: left;
+        width: 68%;
+    }
+    #box-3 {
+        float: right;
+        width: 30%;
+    }
+</style>
+```
+``` html
+<body>
+    <div id="box-2" class="box">
+        ...
+    </div>
+    <div id="box-3" class="box">
+        ...
+    </div>
+
+    <div class="clr"></div>  <!-- Clearing here -->
+
+    <div id="box-4" class="box">
+        ...
+    </div>
+</body>
+```
+
+## **Display - block, inline, inline-block**
+``` html
+<style>
+    img {
+        display: block;
+        margin: auto; /* To center img - margin: auto - we need display "block" */
+    }
+
+    .box{
+        width: 32.8%; 
+        display: inline-block;  /* "inline" cannot be used with width */
+        box-sizing: border-box;
+        background: #f4f4f4;
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+</style>
+```
+
+
+## **Positioning**
+Position Values
+|Key|Description|
+|---|---|
+| Static | Not effected by tblr(top, bottom, left, right) properties/values |
+| Relative | tblr values ause element to be moved from its normal position |
+| Absolute | Positioned relative to its parent element that is position "relative" |
+| Fixed | Positioned relative to viewport |
+| Sticky | Positioned based on scroll position |
+
+``` html
+
 ```
