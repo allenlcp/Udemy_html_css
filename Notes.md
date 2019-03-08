@@ -740,8 +740,8 @@ Float
 ## **Negative Margin**
 > Only works with margin **NOT** padding though
 
-___
-> **Opacity** - value 0 to 1 - where 1 where it is now, 0 completely transparent
+## **Opacity** 
+> Value 0 to 1 - where 1 where it is now, 0 completely transparent
 ``` html
 <style>
   .test {
