@@ -412,3 +412,192 @@ Selectors
     }
 </style>
 ```
+
+## **Dev Tools**
+use_agent_stylesheet -> from the browser
+
+## **Fonts**
+
+Using google-fonts -> use the link and then use it according to docs
+``` html
+<head>
+    ...
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+          body{
+            font-family: 'Roboto', sans-serif;
+            font-size: 10px;
+            line-height: 1.6em;
+          }
+    </style>
+</head>
+```
+
+CSS Units: Absolute
+|Key|Description|
+|---|---|
+| cm  | Centimeters |
+| mm  | Millimeters |
+| in  | Inches |
+| px  | Pixels (1px = 1/96th of 1in) |
+| pt  | Points (1pt = 1/72 of 1in) |
+| pc  | Picas picas (1pc = 12pt) |
+
+CSS Units: Relative
+|Key|Description|
+|---|---|
+| %  | To parent element |
+| em  | To font-size/margin/padding/etc.. of parent element |
+| rem  | To font-size/margin/padding/etc.. of root element |
+| vw  | To 1% of viewport width |
+| vh  | To 1% of viewport height |
+
+
+Color Types
+``` html
+<style>
+    h1{
+      /* Color Name */
+      color:coral;
+    }
+
+    h2{
+      /* rgb - red, green, blue - each value between 0 and 255 */
+      /* all 0 is red, all 255 is black */
+      color: rgb(20,100,120);
+    }
+    h3{
+      /* Hex - starts with # and then followed by [0-9] [A-F] */
+      /* All f is white, all zero is black*/
+      /* If all 6 are the same - we can cut it to 3 */
+      color: #f4f4f4;
+    }
+</style>
+```
+> https://www.color-hex.com/
+> https://htmlcolorcodes.com/
+
+
+Background & Borders
+> jpeg - cannot be transparent
+> png - can be transparent
+
+``` html
+<style>
+    #box-1{
+      background-color: blanchedalmond;
+
+      /* Individually describe each - all 3 required */
+      /* border-width: 3px;
+      border-color: red;
+      border-style: solid; */
+      
+      border: 3px solid red; /* 3 required values - order not important */
+      border-radius: 10px;
+    }
+
+    #box-2{
+      background: #333;
+      color: #fff;
+      border-top: blue solid 3px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    #box-3{
+      /* Individually describe each */
+      /* background-image: url(./img/stars.jpg);
+      background-repeat: no-repeat;
+      background-position: -100px -100px;
+      background-size: cover; */
+      background: url(./img/stars.jpg) no-repeat center center/cover;
+      color: #fff;
+      height: 300px;
+      width: 600px;
+    }
+
+    #box-4{
+      background: url(./img/leaf.png) no-repeat center center;
+      background-attachment: fixed;
+    }
+</style>
+```
+ 
+Box Model, Margin & Padding
+> margin - outside of the border/element
+> padding - inside of the border/element
+
+> Reset margin and padding
+``` html
+<style>
+    /* CSS Reset "*" means everything */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+```
+
+> Actual width of an element will include the padding, margin, border
+> To fix the width we use 
+``` html
+<style>
+    * {
+        ...
+        box-sizing: border-box; /* This will fix the width - padding, margin, border size will eat in the element*/
+    }
+
+</style>
+```
+
+> Padding & Margin
+``` html
+<style>
+    /* CSS Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .box{
+        background: f4f4f4;
+        border: 2px grey solid;
+        width: 500px;
+
+        /* Padding on all sides */
+        padding: 20px;  
+
+        /* Padding per sides */
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+
+        /* Padding shorthand = top, right, bottom, left */
+        padding: 10px, 20px, 10px, 20px;
+
+        /* Padding shorthand = top/bottom, left/right */
+        padding: 10px 20px;
+
+        /* Margin on all sides */
+        margin: 20px;
+
+        /* Margin per sides */
+        margin-top: 10px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+
+        /* Margin shorthand = top, right, bottom, left */
+        margin: 10px, 20px, 10px, 20px;
+
+        /* Margin shorthand = top/bottom, left/right */
+        margin: 10px 20px;
+    }
+
+    .box h3{
+        padding-bottom: 10px;
+    }
+</style>
+```
