@@ -444,8 +444,7 @@ CSS Units: Absolute
 | pc | Picas picas (1pc = 12pt) |
 
 
-CSS Units: Relative
-|Key|Description|
+|Tag|Description|
 |---|---|
 | %  | To parent element |
 | em  | To font-size/margin/padding/etc.. of parent element |
