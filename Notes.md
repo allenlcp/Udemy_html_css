@@ -688,15 +688,13 @@ Float
 
 
 ## **Positioning**
+> Not preferred - not mobile friendly
+
 Position Values
 |Key|Description|
 |---|---|
 | Static | Not effected by tblr(top, bottom, left, right) properties/values |
-| Relative | tblr values ause element to be moved from its normal position |
+| Relative | tblr values cause element to be moved from its normal position |
 | Absolute | Positioned relative to its parent element that is position "relative" |
 | Fixed | Positioned relative to viewport |
 | Sticky | Positioned based on scroll position |
-
-``` html
-
-```
