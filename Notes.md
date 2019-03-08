@@ -752,3 +752,196 @@ Float
 ___
 
 ## **Responsive Design**
+> Media Queries
+> max-width:500px -> do something below 500px
+> min-width:500px -> do something above 500px
+> and -> do something between
+
+``` html
+<style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: gray;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      display: none;
+    }
+
+    /* Smartphones */
+    @media only screen and (max-width: 500px) {
+      body {
+        background: red;
+      }
+
+      #smartphone h1 {
+        display: block;
+      }
+    }
+
+    /* Tablet */
+    @media(min-width: 501px) and (max-width: 768px) {
+      body {
+        background: blue;
+      }
+
+      #tablet h1 {
+        display: block;
+      }
+    }
+
+    /* Normal */
+    @media(min-width: 769px) and (max-width: 1200px) {
+      body {
+        background: green;
+      }
+
+      #normal h1 {
+        display: block;
+      }
+    }
+
+    /* Widescreen */
+    @media(min-width: 1201px) {
+      body {
+        background: black;
+      }
+
+      #widescreen h1 {
+        display: block;
+      }
+    }
+
+    /* Landscape */
+    @media(max-height: 500px) {
+      body {
+        background: orange;
+      }
+
+      #landscape h1 {
+        display: block;
+      }
+      
+    }
+</style>
+```
+Overlapping media queries:
+> Screen between 0-500px -> will show "Tablet" & "Smartphone" with a blue background (because the second media overrides the first one)
+> Screen between 501px - 768px -> will show "Tablet" and blue background
+``` html
+<style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: gray;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      display: none;
+    }
+
+    /* Smartphones */
+    @media only screen and (max-width: 500px) {
+      body {
+        background: red;
+      }
+
+      #smartphone h1 {
+        display: block;
+      }
+    }
+
+    /* Overlapping size */
+    @media(max-width: 768px) {
+      body {
+        background: blue;
+      }
+
+      #tablet h1 {
+        display: block;
+      }
+    } 
+}
+</style>
+```
+Media type:
+|Value|Description|
+|---|---|
+| all  | Default. Used for all media type devices |
+| print  | Used for printers |
+| screen  | Used for computer screens, tablets, smart-phones, etc.. |
+| speech  | Used for screenreaders that "reads" the page out loud |
+
+> Load css depending on screen size
+``` html
+<style>
+    ...
+</style>
+<!-- Needs to be after style to overwrite them -->
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="mobile.css">
+```
+
+## **em vs rem**
+* em - dependent on parent size, will keep going up until it finds a font-size set
+* em gets complex with nested elements 
+``` html
+<style>
+    #box-1 {
+        font-size: 20px;
+    }
+
+    #box-1 p {
+        font-size: 1.5em;  /* Computed size is 30px as (1.5 * 20px) */
+        padding: 1em; /* Computed size is 30px as ((1.5 * 20px) * 1), not 20px - padding size dependent on font-size above*/
+    }
+</style>
+```
+* rem - dependent on html element size 
+* rem preferred
+
+## **Vh and Vw Units**
+* Vh - viewport height (100 slices vertical)
+* Vw - viewport width (100 slices horizontal)
+``` html
+<style>
+    header {
+      background: #333;
+      color: #fff;
+      text-align: center;      
+      /* height: 100%; -> will only wrap the content a 100% - won't take the whole screen*/
+      height: 100vh; /* vh -> will take the whole screen/viewport*/
+    }
+</style>
+```
+``` html
+<head>
+  ...
+  <style>
+    ...
+    header {
+      ...
+      padding: 2rem;
+    }
+    ...
+    section {
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- This cover the whole page irrespective of browser size -->
+  <header>
+    ...
+  </header>
+  <!-- This section will then be below - you will need to scroll - as above will initially take whole page -->
+  <section>
+    ...
+  </section>
+</body>
+```
+
