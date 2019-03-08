@@ -434,14 +434,15 @@ Using google-fonts -> use the link and then use it according to docs
 ```
 
 CSS Units: Absolute
-|Key|Description|
+| Tag | Description |
 |---|---|
-| cm  | Centimeters |
-| mm  | Millimeters |
-| in  | Inches |
-| px  | Pixels (1px = 1/96th of 1in) |
-| pt  | Points (1pt = 1/72 of 1in) |
-| pc  | Picas picas (1pc = 12pt) |
+| cm | Centimeters |
+| mm | Millimeters |
+| in | Inches |
+| px | Pixels (1px = 1/96th of 1in) |
+| pt | Points (1pt = 1/72 of 1in) |
+| pc | Picas picas (1pc = 12pt) |
+
 
 CSS Units: Relative
 |Key|Description|
@@ -690,8 +691,7 @@ Float
 ## **Positioning**
 > Not preferred - not mobile friendly
 
-Position Values
-|Key|Description|
+| Key | Description |
 |---|---|
 | Static | Not effected by tblr(top, bottom, left, right) properties/values |
 | Relative | tblr values cause element to be moved from its normal position |
