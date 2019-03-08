@@ -16,3 +16,8 @@
 | Mac  | #about.box  | creates a div with id "about" and with class "box" |   |   |
 | Mac  |   |   |   |   |
 | Mac  |   |   |   |   |
+
+___
+
+Free images
+https://www.pexels.com

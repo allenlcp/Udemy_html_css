@@ -310,9 +310,9 @@ Divs vs Spans
 ## **HTML5 Semantic Tags**
 ![html5 semantic tags](resources/images/img_001.png)
 
+___
 
 ## **CSS Fundamentals**
-
 Implementing CSS - 3 ways
 ``` html
 <head>
@@ -417,7 +417,6 @@ Selectors
 use_agent_stylesheet -> from the browser
 
 ## **Fonts**
-
 Using google-fonts -> use the link and then use it according to docs
 ``` html
 <head>
@@ -698,3 +697,58 @@ Float
 | Absolute | Positioned relative to its parent element that is position "relative" |
 | Fixed | Positioned relative to viewport |
 | Sticky | Positioned based on scroll position |
+
+
+## **Visibility**
+``` html
+<style>
+    h1 {
+        /* display: none; -> completely removes it */
+        /* visibility: hidden; -> just hides it, you see blank space in browser*/
+    }
+</style>
+```
+
+## **Precedence**
+> Prints red - Classes takes precedence on elements irrespective of position 
+``` html
+<style>
+  /* By default precedence takes place - i.e which comes last gets apply */
+  /* However classes takes precedence on elements irrespective of position in css file */
+  .hello{
+    color: red;
+  }
+
+  h1 {
+    color: blue;
+  }
+</style>
+```
+> However, can be overridden using "!important"
+> Prints blue
+``` html
+<style>
+  h1 {
+    color: blue !important;
+  }
+  .hello{
+    color: red;
+  }
+</style>
+```
+
+## **Negative Margin**
+> Only works with margin **NOT** padding though
+
+___
+> **Opacity** - value 0 to 1 - where 1 where it is now, 0 completely transparent
+``` html
+<style>
+  .test {
+    opacity: 0.9;
+  }
+</style>
+```
+___
+
+## **Responsive Design**
