@@ -40,5 +40,16 @@ https://www.w3schools.com/tags/tag_doctype.asp
 ```
 
 > Typography
+>* <h1> -> you want one h1 per page as used by SEO
+>* <h1> -> <h6> -> bigger to smaller
 
+>* <strong> -> to stand out (<b>, <u>, <i> -> old tag has been deprecated with html5)
+>* <em> -> italic
+>* <br> -> line break
+>* <hr> -> horizontal rule (break plus line)
 
+> Links
+>* <a> tag
+``` html
+<a href="http://www.google.com" target="_blank">Click For Google</a>
+```
