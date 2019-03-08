@@ -869,7 +869,8 @@ Overlapping media queries:
 }
 </style>
 ```
-Media type:
+> Media type:
+
 |Value|Description|
 |---|---|
 | all  | Default. Used for all media type devices |
@@ -1121,6 +1122,7 @@ Round background behind fontawsome icon
 ```
 ___
 
-## **Website Deployment**
+## **Advanced CSS selectors**
+
 
 
