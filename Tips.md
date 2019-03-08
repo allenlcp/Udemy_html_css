@@ -10,5 +10,7 @@
 | Mac  | li*4 | Create 4 li tags |   |   |
 | Mac  | input:number  | Creates input tag of type number |   |   |
 | Mac  | ctrl + d | Select next similar selected  |   |   |
+| Mac  | h1#about | creates h1 tag with id about |   |   |
+| Mac  | #about | for div we can ignore tag  |   |   |
 | Mac  |   |   |   |   |
 | Mac  |   |   |   |   |

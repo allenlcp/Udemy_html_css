@@ -39,7 +39,7 @@ https://www.w3schools.com/tags/tag_doctype.asp
 </head>
 ```
 
-Typography
+## **Typography**
 * `<h1>` -> you want one h1 per page as used by SEO
 * `<h1>` -> `<h6>` -> bigger to smaller
 
@@ -48,7 +48,7 @@ Typography
 * `<br>` -> line break
 * `<hr>` -> horizontal rule (break plus line)
 
-Links `<a>` tag
+## **Links `<a>`**
 > External link
 ``` html
 <a href="http://www.google.com" target="_blank">Click For Google</a>
@@ -59,7 +59,7 @@ Links `<a>` tag
 <a href="./04_typography.html" target="_blank">Typography</a>
 ```
 
-Images `<img>` tag
+## **Images `<img>`**
 > Local image
 ``` html
 <img src="./images/sample.jpg" alt="My Image">
@@ -69,7 +69,7 @@ Images `<img>` tag
 <img src="https://source.unsplash.com/200x200/?nature,water" alt="My Image">
 ```
 
-List 
+## **List** 
 > Unordered list `<ul>`
 ``` html
 <ul>
@@ -132,7 +132,7 @@ List
 </ol>
 ```
 
-Tables
+## **Tables**
 ``` html
 <table>
     <thead>
@@ -157,7 +157,7 @@ Tables
 </table>
 ```
 
-Forms
+## **Forms**
 ``` html
 <form action="process.php"> <!-- backend process -->
     <!-- Input -->
@@ -259,9 +259,54 @@ Forms
 ```
 
 
-Block & Inline Level Elements
+## **Block & Inline Level Elements**
 https://www.w3schools.com/html/html_blocks.asp
 
 > Block - takes the whole page
 > Inline - next element goes to its right
+
+
+## **Divs & Spans, Classes & Ids**
+Classes vs Ids
+* id - you usually not repeat on the same page
+* class - you repeat
+
+Divs vs Spans
+* div - is a block level element
+* span - is inline
+
+
+## **HTML entities**
+``` html
+<!-- The browser does not see th extra spaces between is and brad, it only see one space -->
+<p>Hello, my name is       Brad</p>
+<!-- Non breaking space -->
+<p>Hello, my name is &nbsp;&nbsp;&nbsp;&nbsp; Brad</p>
+<!-- Greater than and less than -->
+<p>5 &gt; 2</p>
+<p>1 &#62; 2</p>
+<p>1 &lt; 2</p>
+<p>1 &#60; 2</p>
+<!-- Copyright -->
+<p>&copy;</p>
+<p>&reg;</p>
+<!-- Currency -->
+<p>&cent;</p>
+<p>&pound;</p>
+<p>&yen;</p>
+<p>&euro;</p>
+<!-- Suits -->
+<p>&spades;</p>
+<p>&clubs;</p>
+<p>&hearts;</p>
+<p>&diams;</p>
+<!-- Computer Code -->
+<code>
+&lt;?php echo 'Hello' ?&gt;
+</code>
+<p>Save the file by pressing <kbd>Ctrl + S</kbd></p>
+```
+
+## **HTML5 Semantic Tags**
+![html5 semantic tags](resources/images/img_001.png)
 
