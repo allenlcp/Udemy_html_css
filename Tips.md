@@ -7,8 +7,8 @@
 | Mac  | ! + enter  | Basic html structure  |   |   |
 | Mac  | lorem100  | Produces 100 words  |   |   |
 | Mac  |  alt + arrow | Move to next word  |   |   |
-| Mac  |   |   |   |   |
-| Mac  |   |   |   |   |
-| Mac  |   |   |   |   |
+| Mac  | li*4 | Create 4 li tags |   |   |
+| Mac  | input:number  | Creates input tag of type number |   |   |
+| Mac  | ctrl + d | Select next similar selected  |   |   |
 | Mac  |   |   |   |   |
 | Mac  |   |   |   |   |
