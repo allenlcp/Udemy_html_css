@@ -944,4 +944,183 @@ Media type:
   </section>
 </body>
 ```
+___
+
+## **Flexbox**
+* Modern layout mode is CSS3
+* **flex** is a value for the **display** property
+* replaces floats and is much more elegant to work with
+* aligns items both horizontal (row) and vertical (column)
+* flex items can be re-ordred via CSS
+
+> How it works
+![flex - how it works](resources/images/img_002.png)\
+* **justify-content** -> align along the main axis (horizontal)
+* **align-items** -> align  items along the cross axis (vertical)
+* **align-content** -> align when extra space is cross axis
+
+> As soon as the parent element has the display set to flex, the inside element are aligned horizontally
+``` html
+<style>
+    #container {
+      display: flex;      
+     } 
+</style>
+```
+> By default - fits only 12 horizontally on screen and 6 on smaller screen - need to double check though
+
+> More complex example
+``` html
+<style>
+    #container {
+      display: flex;
+      flex-direction: row; /* -> default value*/
+      /* flex-direction: row-reverse; -> in reverse order and starts from the right hand side*/
+      /* flex-direction: column; -> aligned vertically*/
+      flex-wrap: wrap; /* Wraps the children that cannot fit on the screen onto the next line */
+      /* flex-flow: row nowrap; -> shorthand for flex-direction and flex-wrap in one line */
+     } 
+
+    .item {
+      background: #f4f4f4;
+      border: #ccc solid 1px;
+      padding: 1rem;
+      text-align: center;
+      margin: 0.75rem;
+      flex: 1; /* Makes the children equal size and takes the whole screen*/
+    }
+
+    .item:first-child {
+      flex: 1;
+      /* flex: 2; -> first child will be twice as big as the second child assuming there is only two child */
+    }
+</style>
+```
+
+> Horizontal, Vertial, Self Alignment and Order
+``` html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    ...
+    <style>
+      #container {
+        background: #555;
+        display: flex;
+        flex-wrap: wrap;
+
+        /* Align items horizontal */
+        justify-content: space-evenly;
+        /*  
+            OPTIONS:
+            flex-start -> default - align to the left
+            flex-end -> align to the right
+            center
+            space-between -> only between, at the edge both left and right handside don't have space
+            space-around -> divide the space around each item - left and right end is smaller than middle
+            space-evenly -> even on all sides
+        */
+
+        height: 600px;
+        /* Align items vertical (must be height) */
+        align-items: baseline;
+        /*  
+            OPTIONS:
+            flex-start -> goes to the top
+            flex-end -> goes to the bottom
+            center -> goes to the center
+            baseline -> similar to start - need to check differences
+            stretch -> strecth all the way to height
+        */
+
+        /* Align items vertical where extra space */
+        align-content: space-between;
+        /*  
+            OPTIONS:
+            flex-start -> goes to the top
+            flex-end -> goes to the bottom
+            center -> goes to the center
+            space-between -> goes to both ends
+            space-around -> center with equal space around
+            stretch
+        */
+      }
+
+      .item-1 {
+        order: 3; /* Use order to change order */
+      }
+
+      .item-2 {
+        /* Align single item vertical */
+        align-self: center;
+        /* 
+            OPTIONS:
+            flex-start
+            flex-end
+            center
+            baseline
+            stretch;
+         */
+        order: 2;
+      }
+
+      .item-3 {
+        order: 1;
+      }
+
+      .item {
+        ...
+        flex-basis: 200px; /* same as width*/
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="item item-1"><h3>Item 1</h3></div>
+      <div class="item item-2"><h3>Item 2</h3></div>
+      <div class="item item-3"><h3>Item 3</h3></div>
+    </div>
+  </body>
+</html>
+```
+
+____
+
+To keep container on tap use position: sticky and top to zero
+``` css
+#navbar {  
+  position: sticky;
+  top:0;  
+}
+```
+___
+
+Overlay
+``` css
+#showcase .showcase-content {
+  ...
+  /* Overlay */
+  position: absolute;
+  top: 60px;  /* Caters for navbar - need to move it down*/
+  left:0;
+  right: 0; /* overlay ends at edge */
+  bottom: 0; /* overlay ends at edge */
+  background-color: rgba(0,0,0,0.4); /* Opacity of 1 will be black */
+}
+```
+____
+
+Round background behind fontawsome icon
+``` css
+#what .items .item i {
+  background: #93cb52;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+```
+___
+
+## **Website Deployment**
+
 

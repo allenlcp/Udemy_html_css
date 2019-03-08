@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Flex Align</title>
-  <style>
-    #container {
-      background: #555;
-      display: flex;
-      flex-wrap: wrap;
-      /* Align items horizontal */
-      justify-content: space-evenly;
-      /*  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Flex Align</title>
+    <style>
+      #container {
+        background: #555;
+        display: flex;
+        flex-wrap: wrap;
+
+        /* Align items horizontal */
+        justify-content: space-evenly;
+        /*  
             OPTIONS:
-            flex-start 
-            flex-end 
+            flex-start -> default - align to the left
+            flex-end -> align to the right
             center
-            space-between
-            space-around
-            space-evenly 
+            space-between -> only between, at the edge both left and right handside don't have space
+            space-around -> divide the space around each item - left and right end is smaller than middle
+            space-evenly -> even on all sides
         */
+
         height: 600px;
         /* Align items vertical (must be height) */
         align-items: baseline;
         /*  
             OPTIONS:
-            flex-start 
-            flex-end 
-            center
-            baseline
-            stretch
+            flex-start -> goes to the top
+            flex-end -> goes to the bottom
+            center -> goes to the center
+            baseline -> similar to start - need to check differences
+            stretch -> strecth all the way to height
         */
+
         /* Align items vertical where extra space */
         align-content: space-between;
         /*  
             OPTIONS:
-            flex-start 
-            flex-end 
-            center
-            space-between
-            space-around
+            flex-start -> goes to the top
+            flex-end -> goes to the bottom
+            center -> goes to the center
+            space-between -> goes to both ends
+            space-around -> center with equal space around
             stretch
         */
-    }
+      }
 
-    .item-1 {
-      order: 3;
-    }
+      .item-1 {
+        order: 3; /* Use order to change order */
+      }
 
-    .item-2 {
-      /* Align single item vertical */
-      align-self: center;
-      /* 
+      .item-2 {
+        /* Align single item vertical */
+        align-self: center;
+        /* 
             OPTIONS:
             flex-start
             flex-end
@@ -60,28 +63,28 @@
             baseline
             stretch;
          */
-      order: 2
-    }
+        order: 2;
+      }
 
-    .item-3 {
-      order: 1;
-    }
-    
-    .item {
+      .item-3 {
+        order: 1;
+      }
+
+      .item {
         background: #f4f4f4;
         border: #ccc solid 1px;
         text-align: center;
         padding: 1rem;
         margin: 0.5rem;
-        flex-basis: 200px;
+        flex-basis: 200px; /* same as width*/
       }
-  </style>
-</head>
-<body>
-  <div id="container">
-    <div class="item item-1"><h3>Item 1</h3></div>
-    <div class="item item-2"><h3>Item 2</h3></div>
-    <div class="item item-3"><h3>Item 3</h3></div>
-  </div>
-</body>
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="item item-1"><h3>Item 1</h3></div>
+      <div class="item item-2"><h3>Item 2</h3></div>
+      <div class="item item-3"><h3>Item 3</h3></div>
+    </div>
+  </body>
 </html>

@@ -8,11 +8,12 @@
   <style>
     #container {
       display: flex;
-      flex-direction: row;
-      /* flex-direction: column; */
-      flex-wrap: wrap;
-      /* flex-flow: row nowrap; */
-    }
+      flex-direction: row; /* -> default value*/
+      /* flex-direction: row-reverse; -> in reverse order and starts from the right hand side*/
+      /* flex-direction: column; -> aligned vertically*/
+      flex-wrap: wrap; /* Wraps the children that cannot fit on the screen onto the next line */
+      /* flex-flow: row nowrap; -> shorthand for flex-direction and flex-wrap in one line */
+     } 
 
     .item {
       background: #f4f4f4;
@@ -20,11 +21,12 @@
       padding: 1rem;
       text-align: center;
       margin: 0.75rem;
-      flex: 1;
+      flex: 1; /* Makes the children equal size and takes the whole screen*/
     }
 
     .item:first-child {
       flex: 1;
+      /* flex: 2; -> first child will be twice as big as the second child assuming there is only two child */
     }
   </style>
 </head>
