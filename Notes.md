@@ -432,8 +432,7 @@ Using google-fonts -> use the link and then use it according to docs
     </style>
 </head>
 ```
-
-CSS Units: Absolute
+> CSS Units: absolute
 | Tag | Description |
 |---|---|
 | cm | Centimeters |
@@ -443,7 +442,7 @@ CSS Units: Absolute
 | pt | Points (1pt = 1/72 of 1in) |
 | pc | Picas picas (1pc = 12pt) |
 
-
+> CSS Units: relative
 |Tag|Description|
 |---|---|
 | %  | To parent element |
