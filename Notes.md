@@ -310,3 +310,105 @@ Divs vs Spans
 ## **HTML5 Semantic Tags**
 ![html5 semantic tags](resources/images/img_001.png)
 
+
+## **CSS Fundamentals**
+
+Implementing CSS - 3 ways
+``` html
+<head>
+    meta, title, etc ....
+    <!-- External CSS - preferred -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Internal CSS -->
+    <style>
+        h2 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- Inline CSS -->
+    <h1 style="color:red">Heading One</h1>
+    <!-- Internal CSS -->
+    <h2>Heading Two</h2>
+    <!-- External CSS -->
+    <h3>Heading Three</h3>
+</body>
+```
+
+Selectors
+> For html tags - just use the element tag
+``` html
+<style>
+    body{
+      background-color: #333;
+    }
+</style>
+```
+
+> For ids use "#"
+``` html
+<style>
+    #green-heading{
+        color: green;
+    }
+</style>
+<div>
+    <h2 id="green-heading">Welcome</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+```
+> For classes use "."
+``` html
+<style>
+    .green-heading{
+        color: green;
+    }
+</style>
+<div>
+    <h2 class="green-heading">Welcome</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+```
+> Naming convention - be generic otherwise you need to rename. e.g here if we call it green, if we change color we to blue.. we need to rename it
+``` html
+<style>
+    .primary-heading{
+        color: blue; 
+    }
+</style>
+<div>
+    <h2 class="primary-heading">Welcome</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+```
+> Multiple Selectors - use comma
+``` html
+<style>
+    /* Multiple Selectors */
+    #welcome, #about {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 5px;
+    }
+</style>
+<body>
+    <div id="welcome"> 
+    <h2 class="green-heading">Welcome</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </div>
+  <div id="about">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </div>
+</body>
+```
+> Nested Selectors - do not use comma
+``` html
+<style>
+    /* Nested Selector */
+    #welcome p {
+      font-size: 40px;
+    }
+</style>
+```
