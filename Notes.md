@@ -1122,7 +1122,242 @@ Round background behind fontawsome icon
 ```
 ___
 
-## **Advanced CSS selectors**
+## **Advanced CSS**
+Selectors:
+`>`
+``` css
+/* if div is a direct parent of p (children) */
+div > p {...}
+```
+``` html
+<div>
+    <p>HERE - Lorem ipsum dolor sit amet.</p> <!-- This one is being selected -->
 
+    <ul>
+        <li>Item 1</li>
+        <li><p>Lorem ipsum dolor sit amet.</p></li>
+        <li>Item 3</li>
+    </ul>
 
+    <p>Lorem ipsum dolor sit amet.</p>  <!-- This one is being selected -->
+</div>
+```
 
+`+`
+``` css
+/* if p is right after div (only one) - i.e needs to be on same hierarchy */
+div + p {...}
+```
+``` html
+<div>
+    <p>HERE - Lorem ipsum dolor sit amet.</p> 
+
+    <ul>
+        <li>Item 1</li>
+        <li><p>Lorem ipsum dolor sit amet.</p></li>
+        <li>Item 3</li>
+    </ul>
+
+    <p>Lorem ipsum dolor sit amet.</p> <!-- Ignored as it is a children of div --> 
+</div>
+<p>Lorem ipsum dolor sit amet.</p> <!-- This one is being selected -->
+<a href="#">Page 1</a>
+<br />
+<p>Lorem ipsum dolor sit amet.</p> <!-- Ignored as it takes the first one after the div-->
+```
+
+`~`
+``` css
+/* if p is preceded by a ul with same parent */
+ul ~ p {...}
+```
+``` html
+<div>
+    <p>HERE - Lorem ipsum dolor sit amet.</p> 
+
+    <ul>
+        <li>Item 1</li>
+        <li><p>Lorem ipsum dolor sit amet.</p></li>
+        <li>Item 3</li>
+    </ul>
+
+    <p>Lorem ipsum dolor sit amet.</p> <!-- Selected --> 
+</div>
+```
+
+`[attribute]`
+``` css
+/* Target attribute */
+a[target] {...}
+```
+``` html
+<div>
+    <a href="#">Page 1</a>
+    <a href="#">Page 2</a>
+    <a href="http://google.com" target="_blank">Google</a> <!-- Selected --> 
+</div>
+```
+
+`[attribute="value"]`
+``` css
+/* Target attribute */
+a[target] {...}
+```
+``` html
+<div>
+    <form>
+      <input type="text" placeholder="Name" /> <!-- Selected --> 
+      <input type="email" placeholder="Email" /> <!-- Selected --> 
+      <input type="submit" value="Submit" />
+    </form>
+</div>
+```
+
+___
+
+nth-child
+``` css
+/* first-child */
+li:first-child {..}
+
+/* last-child */
+li:last-child {..}
+
+/* nth-child selector matches every element (e.g div, a and etc) that is the nth child, regardless of type, of its parent. */
+
+/* Position 3 */
+li:nth-child(3) {..}
+
+/* Every 3rd */
+li:nth-child(3n + 0) {..}
+
+/* Every 3rd after 7 (starting counter) */
+li:nth-child(3n + 7) {..}
+
+/* odd */
+li:nth-child(odd) {..}
+
+/* even */
+li:nth-child(even) {..}
+```
+___
+
+Before & After pseudo selectors
+* Add content before and after something e.g Name below
+``` css
+.is-required:after {
+    content: '*';
+    color: red;
+    padding-left: 2px;
+}
+```
+``` html
+<body>
+    <label class="is-required" for="name">Name</label>
+</body>
+```
+``` text
+Name* -> "*" is injected by css -> not pysically seem in chrome devtools
+```
+
+* For overlay
+``` css
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    /* If background is setup here - it will overlay the fonts */
+}
+
+header h1 {
+    font-size: 6rem;
+    margin: 1rem;
+}
+
+header:before {
+    content: ''; /* No content */
+    background: url('https://source.unsplash.com/1600x900/?nature,water')
+        no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* send it back below fonts */
+    opacity: 0.5;
+}
+```
+``` html
+<body>
+    <header>
+      <h1>Hello World</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, hic!
+      </p>
+    </header>
+</body>
+```
+___
+
+Box Shadows
+``` css
+.box {
+    padding: 1rem;
+    margin: 1rem;
+    background: coral;
+    color: #fff;
+    /* offset-x | offset-y | color */
+    box-shadow: 10px 10px teal;
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 5px 5px 20px teal;
+    /* Negative values - shadow on top and left */
+    box-shadow: -5px -5px 20px teal;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3);
+    /* inset | offset-x | offset-y | color */
+    box-shadow: inset -3px -3px teal;
+    /* Multiple shadows */
+    box-shadow: 3px 3px teal, -3px -3px olive;
+}
+```
+
+___ 
+
+Text Shadows
+
+``` css
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5rem;
+}
+
+h1.a {
+    /* h-shadow | v-shadow | color */
+    text-shadow: 0.2rem 0.2rem steelblue;
+}
+
+h1.b {
+    /* h-shadow | v-shadow | blur */
+    text-shadow: 0.4rem 0.3rem 0.7rem steelblue;
+}
+
+h1.c {
+    /* White Text */
+    color: #fff;
+    text-shadow: 0.2rem 0.2rem 1rem steelblue;
+}
+
+h1.d {
+    /* Negetive Values */
+    text-shadow: -0.4rem -0.3rem 0.7rem steelblue;
+}
+```
+___
+
+CSS Variables (Custom Properties)
+``` css
+
+```
