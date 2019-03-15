@@ -1361,3 +1361,26 @@ CSS Variables (Custom Properties)
 ``` css
 
 ```
+___
+
+Keyframe Anumation
+``` css
+
+```
+___
+
+CSS Transitions
+``` css
+
+```
+___
+
+Transform Property
+``` css
+
+```
+___
+
+## **CSS Grid**
+
+___
