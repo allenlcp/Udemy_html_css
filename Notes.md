@@ -1505,3 +1505,60 @@ ___
 </style>
 ```
 ___
+
+## **Sass**
+* Syntactically Awesome StyleSheets
+* CSS Preprocessor / Precompiler
+* Enhances the functionality of CSS
+* Other preprocessors include Less and Stylus
+
+**How Does Sass Work**
+* Sass uses .scss or .sass file extensions (.scss preferred)
+* The browser does NOT read Sass, it must be compiled
+* Sass files are compiled to norcall CSS files (use nodesass)
+* There are many different types of Sass compilers (cli & gui -> use koala) 
+
+**What does Sass offer**
+* Variables
+* Conditionals
+* Nesting
+* Inheritance
+* Partials / Imports
+* Operators & Calc
+* Functions & Mixins
+* Color Functions
+
+**scss vs sass**
+* .scss is usually preferred over .sass as it uses the same syntax as regular css
+![sass vs scss vs css](resources/images/img_003.png)
+
+
+**cli compiler**
+* use node-sass
+``` bash
+npm install node-sass
+```
+``` bash
+...,
+"scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+},...
+```
+``` bash
+npm run sass
+```
+
+**gui compiler**
+* use http://koala-app.com/
+
+
+**vsc comiler**
+* use https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass
+
+___
+
+**Sass - variables & partials**
+
+``` css
+
+```
