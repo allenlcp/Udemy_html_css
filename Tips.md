@@ -27,3 +27,6 @@ https://www.pexels.com
 
 Lat Long
 https://www.latlong.net/
+
+Favicon generator
+http://tools.dynamicdrive.com/favicon/

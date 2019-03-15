@@ -1382,5 +1382,126 @@ Transform Property
 ___
 
 ## **CSS Grid**
+* grid-template-columns - px
+``` css
+.grid {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-columns: auto 300px 300px 300px;    
+}
+```
+* grid-template-columns - fr
+``` css
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;    
+}
+```
+* grid-template-columns - repeat
+``` css
+.grid {
+    display: grid;    
+    grid-template-columns: repeat(2, auto);    
+}
+```
+* grid-template-rows
+* grid-auto-rows
+``` css
+.grid {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    /* Set implicit rows */
+    grid-auto-rows: 3fr; /* -> default */
+    grid-template-columns: repeat(2, 1fr);
+}
+```
+* grid-column-start, grid-column-end
+``` css
+ .item:first-child {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+```
+* grid-column -> span
+``` css
+.item:first-child {
+    grid-column: 1 / span 3;
+}
+```
 
+* grid-row-start, grid-row-end
+``` css
+.item:first-child {
+    grid-row-start: 1; 
+    grid-row-end: 3;
+}
+```
+* grid-row -> span
+``` css
+.item:first-child {
+    grid-row: 1 / span 2;
+}
+```
+* minmax - autofill
+``` css
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+```
+* grid-template-areas
+``` css
+<style>
+    .container {
+        display: grid;
+        grid-template-areas:
+            'header header header header'
+            'content content content sidebar'
+            'box-1 box-2 box-3 box-4'          
+            'footer footer footer footer';       
+        grid-gap: 1rem;
+    }
+
+    .header,
+    .content,
+    .sidebar,
+    .box-1,
+    .box-2,
+    .box-3,
+    .box-4,
+    .footer {
+        border: 1px #ccc solid;
+        padding: 0.5rem;
+    }
+
+    .header {
+    grid-area: header;
+    }
+
+    .content {
+        grid-area: content;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+    }
+
+    .box-1 {
+        grid-area: box-1;
+    }
+
+    .box-2 {
+        grid-area: box-2;
+    }
+
+    .box-3 {
+        grid-area: box-3;
+    }
+
+    .footer {
+        grid-area: footer;
+        text-align: center;
+    }
+</style>
+```
 ___
