@@ -1558,7 +1558,12 @@ npm run sass
 ___
 
 **Sass - variables & partials**
-
-``` css
-
+* variables
+``` scss
+$color: red;
+div {   
+    color: $color;
+} 
 ```
+
+* partials - file start with underscore "_filename.scss"
