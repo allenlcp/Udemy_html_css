@@ -1752,3 +1752,20 @@ div {
 ```
 
 * partials - file start with underscore "_filename.scss"
+> _variables.scss
+``` scss
+$light-color: #f4f4f4;
+$dark-color: #333;
+$font-stack: Arial, Helvetica, sans-serif;
+```
+> main.scss
+``` scss
+@import 'variables';  // no need to put extension
+
+body {
+  background: $light-color;
+  color: $dark-color;
+  font-family: $font-stack;
+  line-height: 1.5;
+}
+```
