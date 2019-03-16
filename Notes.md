@@ -1751,7 +1751,7 @@ div {
 } 
 ```
 
-* partials - file start with underscore "_filename.scss"
+* partials - file start with underscore "_filename.scss" - meaning sass know not to compile this file i.e won't have a file variable.css
 > _variables.scss
 ``` scss
 $light-color: #f4f4f4;
@@ -1760,7 +1760,7 @@ $font-stack: Arial, Helvetica, sans-serif;
 ```
 > main.scss
 ``` scss
-@import 'variables';  // no need to put extension
+@import 'variables';  // no need to put extension and underscore '_'
 
 body {
   background: $light-color;
@@ -1769,3 +1769,116 @@ body {
   line-height: 1.5;
 }
 ```
+___
+
+**Sass - nested/structuring**
+``` scss
+header {
+  background: $dark-color;
+  color: $dark-color;
+  padding: 1rem;
+
+  h1 {  /* Nested h1 */
+    text-align: center;
+  }
+}
+
+.section {
+  &-a { /* '&' - placeholder for parent css i.e '.section' in this case */
+    background: $primary-color;
+    color: $primary-color;
+  }
+}
+
+a {
+  &:hover { /* also works with pseudo selectors */
+    color: red;
+  }
+}
+```
+___
+
+**Sass - inheritance/contrast**
+``` scss
+%btn-shared {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.btn {
+  &-light {
+    @extend %btn-shared; /* Inherits */
+    background-color: $light-color;
+    color: #333;
+  }
+
+  &-dark {
+    @extend %btn-shared;
+    background-color: $dark-color;
+    color: #fff;
+  }
+}
+```
+___
+
+**Sass - functions, mixins and more**
+
+* function vs mixin
+> function return something
+> mixin don't return anything - mainly set of style
+
+* function - save in '_functions.scss' file
+``` scss
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+```
+* function - calling 
+``` scss
+@import 'functions';
+
+header {
+  background: $dark-color;
+  color: set-text-color($dark-color); /* calling function */
+  padding: 1rem;
+}
+```
+
+* mixin
+``` scss
+@mixin transform($property) {
+  --webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+```
+* mixin - calling 
+``` scss
+@import 'functions';
+
+.btn {
+  &-light {
+    ...
+    &:hover {
+      @include transform(rotate(20deg)); /* calling mixin */
+      background-color: darken($light-color, 10%);
+    }
+  }
+}
+```
+
+* other
+``` scss
+background-color: darken($light-color, 10%);
+background-color: lighten($dark-color, 10%);
+```
+___
+
