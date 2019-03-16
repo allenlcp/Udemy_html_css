@@ -1566,24 +1566,6 @@ ___
 ```
 ___
 
-Keyframe Anumation
-``` css
-
-```
-___
-
-CSS Transitions
-``` css
-
-```
-___
-
-Transform Property
-``` css
-
-```
-___
-
 ## **CSS Grid**
 * grid-template-columns - px
 ``` css
@@ -1755,7 +1737,7 @@ npm run sass
 * use http://koala-app.com/
 
 
-**vsc comiler**
+**vsc compiler**
 * use https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass
 
 ___
