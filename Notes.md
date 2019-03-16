@@ -1357,7 +1357,210 @@ h1.d {
 ```
 ___
 
-CSS Variables (Custom Properties)
+**CSS Variables (Custom Properties)**
+Variables in CSS should be declared within a CSS selector that defines its scope. For a global scope you can use either the :root or the body selector.
+> var(custom-name, value)
+* custom-name - Required. The custom property's name (must start with two dashes)
+* value - Optional. The fallback value (used if the custom property is invalid)
 ``` css
+:root {
+  --main-bg-color: coral;
+  --main-txt-color: blue; 
+  --main-padding: 15px; 
+}
 
+#div1 {
+  background-color: var(--main-bg-color);
+  color: var(--main-txt-color);
+  padding: var(--main-padding);
+}
+
+#div2 {
+  background-color: var(--main-bg-color);
+  color: var(--main-txt-color);
+  padding: var(--main-padding);
+}
+```
+
+___
+
+**Keyframe - animations**
+
+``` html
+<style>
+      body {
+        background: #333;
+      }
+
+      .box {
+        background: white;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        animation-name: animate2;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        /* animation-delay: 2s; */
+        /* animation-direction: alternate; */
+        /* animation-timing-function: ease-in-out; */
+      }
+
+      @keyframes animate1 {
+        from {
+          top: 0;
+        }
+
+        to {
+          width: 600px;
+          background-color: red;
+          top: 200px;
+        }
+      }
+
+      @keyframes animate2 {
+        0% {
+          left: 0px;
+          top: 0px;
+          background-color: white;
+          border-radius: 0 0 0 0;
+        }
+        25% {
+          left: 300px;
+          top: 0px;
+          background-color: red;
+          border-radius: 50% 0 0 0;
+        }
+        50% {
+          left: 300px;
+          top: 300px;
+          background-color: green;
+          border-radius: 50% 50% 0 0;
+        }
+        75% {
+          left: 0px;
+          top: 300px;
+          background-color: blue;
+          border-radius: 50% 50% 50% 0;
+        }
+        100% {
+          left: 0px;
+          top: 0px;
+          background-color: white;
+          border-radius: 50% 50% 50% 50%;
+        }
+      }
+</style>
+```
+
+___
+
+**CSS Transitions**
+
+``` html
+<style>
+  body {
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .box {
+    background: white;
+    width: 100px;
+    height: 100px;
+    /* transition-property: background, border-radius height width */
+    /* transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in; */
+    /* transition-delay: 2s, 4s; */
+
+    /* Shorthand - property/duration/timing-function/delay */
+    transition: all 1s ease-in-out;
+  }
+
+  .box:hover {
+    background: red;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+  }
+
+  /* 
+    TRANSITIONAL PROPERTIES
+    -Properties that have an identifiable halfway point
+
+    background-color 
+    background-position 
+    border-color 
+    border-width 
+    border-spacing 
+    bottom 
+    color
+    font-size 
+    font-weight 
+    height left 
+    letter-spacing 
+    line-height 
+    margin 
+    max-height 
+    max-width 
+    min-height 
+    min-width 
+    opacity 
+    outline-color 
+    outline-offset 
+    outline-width 
+    padding right 
+    text-indent 
+    text-shadow 
+    top 
+    vertical-align 
+    visibility 
+    width 
+    word-spacing 
+    z-index */
+</style>
+```
+
+___
+
+**Transform property**
+
+``` html
+<style>
+  body {
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .box {
+    background: white;
+    width: 300px;
+    height: 300px;
+    /* Transform - rotate, scale, skew */
+    /* transform: rotate(25deg); */
+    /* transform: skew(25deg); */
+    /* transform: scale(2); */
+    transition: all 1s ease-in-out;
+  }
+
+  .box:hover {
+    /* transform: rotate(180deg); */
+    /* transform: skew(25deg); */
+    /* transform: scale(2); */
+    /* border-radius: 50%;
+    background-color: blue; */
+    /* transform: translateY(100px);
+    transform: translateX(-100px); */
+    /* x & y */
+    transform: translate(100px, 100px);
+    transform: translate3d(100px, 100px, 100px);
+  }
+</style>
 ```
